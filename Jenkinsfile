@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:\\Windows\\System32;${env.PATH}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,13 +16,8 @@ pipeline {
 
         stage('Test HTML Form') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'python3 test_form.py'
-                    } else {
-                        bat 'python test_form.py'
-                    }
-                }
+                bat 'python --version'
+                bat 'python test_form.py'
             }
         }
     }
