@@ -10,12 +10,14 @@ environment {
 
 
     stages {
-        stage('Test HTML Form') {
-            steps {
-                bat 'python --version'
-                bat 'python test_form.py'
-            }
-        }
+        
+stage('Test HTML Form') {
+    steps {
+        bat '"C:\\Users\\AVICHAL JAIN\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version'
+        bat '"C:\\Users\\AVICHAL JAIN\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" test_form.py'
+    }
+}
+
     }
 
     post {
